@@ -32,6 +32,11 @@
 {
 	
 	NSArray *keyArray = [launchOptions allKeys];
+    NSError *err;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    NSString *targetCouchPath = [documentsDirectoryPath stringByAppendingPathComponent:@"couchdb/demoapp.couch"];
+
 	if ([launchOptions objectForKey:[keyArray objectAtIndex:0]]!=nil) 
 	{
 		NSURL *url = [launchOptions objectForKey:[keyArray objectAtIndex:0]];
@@ -39,6 +44,10 @@
 		NSLog(@"helloworld launchOptions = %@",url);
 	}
     
+    [[NSFileManager defaultManager] copyItemAtPath:[[[NSBundle mainBundle] resourcePath]
+                                                    stringByAppendingPathComponent:@"demoapp.couch"]
+                                            toPath:targetCouchPath
+                                             error:&err];
     [Couchbase startCouchbase:self];
 	
 	return [super application:application didFinishLaunchingWithOptions:launchOptions];
@@ -117,7 +126,7 @@
     NSLog(@"Couch is ready!");
     NSLog(@"couch server runs at %@", serverURL);
     
-    NSString *openFuton = [NSString stringWithFormat:@"window.location.href = \"%@_utils/\"", serverURL];
+    NSString *openFuton = [NSString stringWithFormat:@"window.location.href = \"%@demoapp\/_design\/demoapp\/index.html\"", serverURL];
     
     [webView stringByEvaluatingJavaScriptFromString:openFuton];
 }

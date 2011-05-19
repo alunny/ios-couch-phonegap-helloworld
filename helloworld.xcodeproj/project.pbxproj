@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		576967D61384E4DD00FD6C04 /* PhoneGap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576967D51384E4DD00FD6C04 /* PhoneGap.framework */; };
+		579BB2051384EE7700257174 /* demoapp.couch in Resources */ = {isa = PBXBuildFile; fileRef = 579BB2041384EE7700257174 /* demoapp.couch */; };
 		57A16E281384B38E00665A86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A16E271384B38E00665A86 /* Foundation.framework */; };
 		57A16E2A1384B38E00665A86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A16E291384B38E00665A86 /* UIKit.framework */; };
 		57A16E2C1384B38E00665A86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A16E2B1384B38E00665A86 /* CoreGraphics.framework */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		576967D51384E4DD00FD6C04 /* PhoneGap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PhoneGap.framework; sourceTree = "<group>"; };
+		579BB2041384EE7700257174 /* demoapp.couch */ = {isa = PBXFileReference; lastKnownFileType = file; path = demoapp.couch; sourceTree = "<group>"; };
 		57A16E231384B38E00665A86 /* helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A16E271384B38E00665A86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		57A16E291384B38E00665A86 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -180,6 +182,7 @@
 		57A16E4B1384B38E00665A86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				579BB2041384EE7700257174 /* demoapp.couch */,
 				57A16E4C1384B38E00665A86 /* icons */,
 				57A16E531384B38E00665A86 /* splash */,
 			);
@@ -302,6 +305,7 @@
 				57A16E631384B38E00665A86 /* README in Resources */,
 				57A16E711384B3E900665A86 /* www in Resources */,
 				57A16E8D1384B45800665A86 /* Couchbase.bundle in Resources */,
+				579BB2051384EE7700257174 /* demoapp.couch in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
