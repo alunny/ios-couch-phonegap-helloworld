@@ -1,2 +1,5 @@
 .DS_Store
 **/.DS_Store
+helloworld.xcodeproj/project.xcworkspace/*
+helloworld.xcodeproj/project.xcworkspace/**/*
+build/*
