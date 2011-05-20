@@ -36,6 +36,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
     NSString *documentsDirectoryPath = [paths objectAtIndex:0];
     NSString *targetCouchPath = [documentsDirectoryPath stringByAppendingPathComponent:@"couchdb/demoapp.couch"];
+    BOOL targetCouchExists = [[NSFileManager defaultManager] fileExistsAtPath:targetCouchPath];
 
 	if ([launchOptions objectForKey:[keyArray objectAtIndex:0]]!=nil) 
 	{
@@ -44,10 +45,15 @@
 		NSLog(@"helloworld launchOptions = %@",url);
 	}
     
-    [[NSFileManager defaultManager] copyItemAtPath:[[[NSBundle mainBundle] resourcePath]
+    if (!targetCouchExists) {
+        NSLog(@"no couch - copy over");
+        [[NSFileManager defaultManager] copyItemAtPath:[[[NSBundle mainBundle] resourcePath]
                                                     stringByAppendingPathComponent:@"demoapp.couch"]
                                             toPath:targetCouchPath
                                              error:&err];
+    } else {
+        NSLog(@"couch is there - no copying");
+    }
     [Couchbase startCouchbase:self];
 	
 	return [super application:application didFinishLaunchingWithOptions:launchOptions];
